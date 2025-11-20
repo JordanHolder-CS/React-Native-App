@@ -10,15 +10,15 @@ import {
 } from "react-native";
 import { BlurView } from "expo-blur";
 import { Picker } from "@react-native-picker/picker";
-import { BaseButton, ButtonTray } from "./Button.js";
+import Button, { ButtonTray } from "./Button.js";
 import Icons from "./Icons.js";
 const Form = ({ children, onSubmit, onCancel, submitLabel, submitIcon }) => {
   return (
     <View style={styles.formContainer}>
       <View style={styles.formItems}>{children}</View>
       <ButtonTray>
-        <BaseButton label={submitLabel} icon={submitIcon} onPress={onSubmit} />
-        <BaseButton label="Cancel" icon={<Icons.Close />} onPress={onCancel} />
+        <Button label={submitLabel} icon={submitIcon} onPress={onSubmit} />
+        <Button label="Cancel" icon={<Icons.Close />} onPress={onCancel} />
       </ButtonTray>
     </View>
   );

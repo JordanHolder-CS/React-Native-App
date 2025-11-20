@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { Alert, StyleSheet, Text, View } from "react-native";
 import Screen from "../layout/screen";
-import { DeleteButton, ModifyButton, ButtonTray } from "../UI/Button";
+import Button, { ButtonTray } from "../UI/Button";
 import FullWidthImage from "react-native-fullwidth-image";
 import Icons from "../UI/Icons";
 
@@ -30,12 +30,8 @@ export const ModuleView = ({ module, onDelete, onModify }) => {
           <Text style={styles.dimText}>(Module Leader)</Text>
         </Text>
         <ButtonTray>
-          <ModifyButton
-            icon={<Icons.Edit />}
-            label="Modify"
-            onPress={onModify}
-          />
-          <DeleteButton
+          <Button icon={<Icons.Edit />} label="Modify" onPress={onModify} />
+          <Button
             icon={<Icons.Delete />}
             label="Delete"
             onPress={requestDelete}

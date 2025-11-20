@@ -12,7 +12,7 @@ import Icons from "../UI/Icons";
 import Screen from "../layout/screen.js";
 import initialModules from "../../data/modules.js";
 import ModuleList from "../Modules/ModuleList.js";
-import { BaseButton, ButtonTray } from "../UI/Button.js";
+import Button, { ButtonTray } from "../UI/Button.js";
 //import { Button } from "react-native-web";
 
 export const ModuleListScreen = ({ navigation }) => {
@@ -53,7 +53,7 @@ export const ModuleListScreen = ({ navigation }) => {
   return (
     <Screen>
       <ButtonTray>
-        <BaseButton label="Add" icon={<Icons.Add />} onPress={gotoAddScreen} />
+        <Button label="Add" icon={<Icons.Add />} onPress={gotoAddScreen} />
       </ButtonTray>
       <ModuleList modules={modules} onSelect={gotoViewScreen} />
     </Screen>
