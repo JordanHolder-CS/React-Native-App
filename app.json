@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "React_Native_App",
-    "slug": "React_Native_App",
+    "name": "crudler",
+    "slug": "crudler",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

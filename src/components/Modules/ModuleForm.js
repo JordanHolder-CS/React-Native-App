@@ -1,0 +1,88 @@
+import { StyleSheet, Text, TextInput, View } from "react-native";
+import { useState } from "react";
+import Icons from "../UI/Icons.js";
+import { BaseButton, ButtonTray } from "../UI/Button.js";
+import Form from "../UI/Form.js";
+
+const defaultModule = {
+  ModuleID: Math.floor(100000 + Math.random() * 900000),
+  ModuleName: null,
+  ModuleCode: null,
+  ModuleLevel: null,
+  ModuleLeaderID: null,
+  ModuleLeaderName: null,
+  ModuleImage:
+    "https://images.freeimages.com/images/small-previews/cf5/cellphone-1313194.jpg",
+};
+
+const levels = [
+  { value: 3, label: "3 (Foundation)" },
+  { value: 4, label: "4 (First year)" },
+  { value: 5, label: "5 (Second year)" },
+  { value: 6, label: "6 (Final year)" },
+  { value: 7, label: "7 (Masters)" },
+];
+
+const ModuleForm = ({ originalModule, onSubmit, onCancel }) => {
+  const [module, setModule] = useState(originalModule || defaultModule);
+  const handleSubmit = () => onSubmit(module);
+  const handleChange = (field, value) =>
+    setModule({ ...module, [field]: value });
+
+  return (
+    <Form
+      style={styles.formContainer}
+      onSubmit={handleSubmit}
+      onCancel={onCancel}
+      submitLabel={originalModule ? "Modify" : "Add"}
+      Icons={originalModule ? <Icons.Edit /> : <Icons.Add />}
+    >
+      <Form.InputText
+        label="Module Code"
+        value={module.ModuleCode}
+        onChange={(value) => handleChange("ModuleCode", value)}
+      />
+      <Form.InputText
+        label="Module Name"
+        value={module.ModuleName}
+        onChange={(value) => handleChange("ModuleName", value)}
+      />
+      <Form.InputSelect
+        label="Module Level"
+        prompt="Select module level..."
+        options={levels}
+        value={module.ModuleLevel}
+        onChange={(value) => handleChange("ModuleLevel", value)}
+      />
+      <Form.InputText
+        label="Module Leader"
+        value={module.ModuleLeaderName}
+        onChange={(value) => handleChange("ModuleLeaderName", value)}
+      />
+      <Form.InputText
+        label="Image URL"
+        value={module.ModuleImage}
+        onChange={(value) => handleChange("ModuleImage", value)}
+      />
+    </Form>
+  );
+};
+
+const styles = StyleSheet.create({
+  itemLabel: {
+    color: "grey",
+    fontSize: 16,
+    marginBottom: 5,
+  },
+  itemTextInput: {
+    height: 50,
+    paddingLeft: 10,
+    fontSize: 16,
+    backgroundColor: "white",
+    borderRadius: 7,
+    borderWidth: 1,
+    borderColor: "lightgrey",
+  },
+});
+
+export default ModuleForm;
