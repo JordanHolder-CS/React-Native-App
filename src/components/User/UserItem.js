@@ -1,10 +1,12 @@
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
-const ModuleItem = ({ module, onSelect }) => (
-  <Pressable onPress={() => onSelect(module)}>
+const UserItem = ({ user, onSelect }) => (
+  <Pressable onPress={() => onSelect(user)}>
     <View style={styles.item}>
       <Text style={styles.text}>
-        {module.ModuleCode} {module.ModuleName}
+        {user.UserFirstname} {user.UserLastname} {"("}
+        {user.Type}
+        {")"}
       </Text>
     </View>
   </Pressable>
@@ -24,4 +26,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ModuleItem;
+export default UserItem;

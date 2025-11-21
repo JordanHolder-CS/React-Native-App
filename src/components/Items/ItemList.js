@@ -1,16 +1,12 @@
 import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
-import ModuleItem from "./ModuleItem.js";
+import Items from "./Items.js";
 
-const ModuleList = ({ modules, onSelect }) => {
+const ModuleList = ({ modules: items, onSelect }) => {
   return (
     <ScrollView style={styles.container}>
-      {modules.map((module) => (
-        <ModuleItem
-          key={module.ModuleCode}
-          module={module}
-          onSelect={onSelect}
-        />
+      {items.map((item) => (
+        <Items key={item.ModuleCode} item={item} onSelect={onSelect} />
       ))}
     </ScrollView>
   );

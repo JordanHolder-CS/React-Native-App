@@ -11,7 +11,7 @@ import { useState } from "react";
 import Icons from "../UI/Icons";
 import Screen from "../layout/screen.js";
 import initialModules from "../../data/modules.js";
-import ModuleList from "../Modules/ModuleList.js";
+import ModuleList from "../Items/ItemList.js";
 import Button, { ButtonTray } from "../UI/Button.js";
 //import { Button } from "react-native-web";
 
