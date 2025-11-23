@@ -11,7 +11,7 @@ import { useState } from "react";
 import Icons from "../UI/Icons";
 import Screen from "../layout/screen.js";
 import initialModules from "../../data/modules.js";
-import ModuleList from "../Items/ItemList.js";
+import ItemList from "../Items/ItemList.js";
 import Button, { ButtonTray } from "../UI/Button.js";
 //import { Button } from "react-native-web";
 
@@ -55,7 +55,7 @@ export const ModuleListScreen = ({ navigation }) => {
       <ButtonTray>
         <Button label="Add" icon={<Icons.Add />} onPress={gotoAddScreen} />
       </ButtonTray>
-      <ModuleList modules={modules} onSelect={gotoViewScreen} />
+      <ItemList Items={modules} onSelect={gotoViewScreen} />
     </Screen>
   );
 };

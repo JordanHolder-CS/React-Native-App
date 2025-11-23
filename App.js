@@ -2,6 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import ModuleListScreen from "./src/components/screens/ModuleListScreen";
+import UserListScreen from "./src/components/screens/UserListScreen";
 import ModuleAddScreen from "./src/components/screens/ModuleAddScreen";
 import ModuleViewScreen from "./src/components/screens/ModuleViewScreen";
 import ModuleModifyScreen from "./src/components/screens/ModuleModifyScreen";
@@ -14,8 +15,8 @@ const DrawerStack = () => (
   <Drawer.Navigator>
     <Drawer.Screen
       name="Modules"
-      component={ModuleListScreen}
-      options={{ title: "Module List" }}
+      component={UserListScreen}
+      options={{ title: "User List" }}
     />
     {/* <Drawer.Screen
       name="Users"

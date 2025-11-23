@@ -1,23 +1,19 @@
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
-const Items = ({ item, onSelect }) => (
-  <Pressable onPress={() => onSelect(item)}>
-    <View style={styles.item}>
-      if (item === "users")
-      {
-        <Text style={styles.text}>
-          {item.ModuleCode} {item.ModuleName}
-        </Text>
-      }
-      if (item === "modules")
-      {
-        <Text style={styles.text}>
-          {item.FirstName} {item.LastName}
-        </Text>
-      }
-    </View>
-  </Pressable>
-);
+const Items = ({ item, onSelect }) => {
+  const selectItem = () => {
+    if ("UserFirstname" in item)
+      return `${item.UserFirstname} ${item.UserLastname}`;
+    if ("ModuleCode" in item) return `${item.ModuleCode} ${item.ModuleName}`;
+  };
+  return (
+    <Pressable onPress={() => onSelect(item)}>
+      <View style={styles.item}>
+        <Text style={styles.text}>{selectItem()}</Text>
+      </View>
+    </Pressable>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {},
