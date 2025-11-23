@@ -44,7 +44,7 @@ export const UserListScreen = ({ navigation }) => {
     handleModify(user);
     //navigation.navigate("Modules");
     //navigation.popToTop();
-    navigation.replace("ModuleViewScreen", { user, onDelete, onModify });
+    navigation.replace("UserViewScreen", { user, onDelete, onModify });
   };
 
   const gotoViewScreen = (user) =>

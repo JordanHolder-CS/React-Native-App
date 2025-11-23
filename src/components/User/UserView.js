@@ -22,13 +22,13 @@ export const UserView = ({ user, onDelete, onModify }) => {
       />
       <View style={styles.infoTray}>
         <Text style={styles.boldText}>
-          {user.FirstName} {user.LastName}
+          {user.UserFirstname} {user.UserLastname}
         </Text>
-        <Text style={styles.text}>Level {user.ModuleLevel}</Text>
-        <Text style={styles.text}>
-          {user.ModuleLeaderName}{" "}
-          <Text style={styles.dimText}>(Module Leader)</Text>
-        </Text>
+
+        <Text style={styles.text}>{user.UserEmail} </Text>
+        <Text style={styles.text}>{user.UserType}</Text>
+        <Text style={styles.text}>{user.UserYear}</Text>
+
         <ButtonTray>
           <Button icon={<Icons.Edit />} label="Modify" onPress={onModify} />
           <Button
