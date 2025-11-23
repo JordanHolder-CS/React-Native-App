@@ -9,7 +9,7 @@ export const UserViewScreen = ({ navigation, route }) => {
   const { user, onDelete, onModify } = route.params;
 
   const gotoModifyScreen = () =>
-    navigation.replace("UserModifyScreen", { module, onModify });
+    navigation.replace("UserModifyScreen", { user, onModify });
 
   return (
     <Screen>

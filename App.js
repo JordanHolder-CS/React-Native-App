@@ -5,6 +5,7 @@ import ModuleListScreen from "./src/components/screens/ModuleListScreen";
 import UserListScreen from "./src/components/screens/UserListScreen";
 import UserViewScreen from "./src/components/screens/UserViewScreen";
 import UserAddScreen from "./src/components/screens/UserAddScreen";
+import UserModifyScreen from "./src/components/screens/UserModifyScreen";
 import ModuleAddScreen from "./src/components/screens/ModuleAddScreen";
 import ModuleViewScreen from "./src/components/screens/ModuleViewScreen";
 import ModuleModifyScreen from "./src/components/screens/ModuleModifyScreen";
@@ -69,6 +70,11 @@ export const App = () => {
           name="UserAddScreen"
           component={UserAddScreen}
           options={{ title: "Add Module" }}
+        />
+        <Stack.Screen
+          name="UserModifyScreen"
+          component={UserModifyScreen}
+          options={{ title: "Modify User" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

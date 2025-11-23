@@ -32,7 +32,8 @@ export const ModuleListScreen = ({ navigation }) => {
 
   const onDelete = (module) => {
     handleDelete(module);
-    navigation.goBack();
+    navigation.popToTop();
+    //navigation.goBack();
   };
   const onAdd = (module) => {
     handleAdd(module);
