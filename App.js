@@ -18,7 +18,7 @@ const DrawerStack = () => (
     <Drawer.Screen
       name="Modules"
       component={ModuleListScreen}
-      options={{ title: "User List" }}
+      options={{ title: "Module List" }}
     />
     {
       <Drawer.Screen

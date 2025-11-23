@@ -10,7 +10,7 @@ export const UserView = ({ user, onDelete, onModify }) => {
   const requestDelete = () =>
     Alert.alert(
       "Warning!",
-      `Are you sure that you want to delete module ${user.ModuleCode} ${user.ModuleName}`,
+      `Are you sure that you want to remove ${user.UserFirstname} ${user.UserLastname}`,
       [{ text: "Cancel" }, { text: "Delete", onPress: handleDelete }]
     );
 

@@ -33,7 +33,8 @@ export const UserListScreen = ({ navigation }) => {
 
   const onDelete = (user) => {
     handleDelete(user);
-    navigation.goBack();
+    navigation.popToTop();
+    //navigation.goBack();
   };
   const onAdd = (user) => {
     handleAdd(user);
@@ -43,7 +44,7 @@ export const UserListScreen = ({ navigation }) => {
   const onModify = (user) => {
     handleModify(user);
     //navigation.navigate("Modules");
-    //navigation.popToTop();
+    //
     navigation.replace("UserViewScreen", { user, onDelete, onModify });
   };
 
